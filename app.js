@@ -1,4 +1,9 @@
 "use strict";
+let header = document.getElementById("headerEl");
+let cardSection1 = document.getElementById("Cards");
+let butel1 = document.getElementById("but1");
+
+
 
 
 
@@ -9,6 +14,7 @@ function Person(EmployeeID, FullName, Department, Level, image_URL, salary){
     this.Level = Level;
     this.image_URL = image_URL;
     this.salary = salary;
+    
 }
 
 Person.prototype.findSalary = function(){
@@ -24,19 +30,83 @@ Person.prototype.findSalary = function(){
     let randomSalary = (Math.random() * (Max-Min) ) + Min;
     var Salary = randomSalary - (randomSalary * (7.5/100));
     return Math.round(Salary * 100) / 100;
-    }
 
-    Person.prototype.render = function(){
-    document.write(`${this.FullName} Salary is  ${this.findSalary()}JD <br>`);
+    
+ 
+    }  
+
+
+Person.prototype.render = function() { 
+
+
+    
+    
+    
+    let fname = document.createElement("h5");
+    fname.textContent=this.FullName;
+    cardSection1.appendChild(fname);
+    fname.style.textAlign= "center";
+
+    
+       
+
+    let depname = document.createElement("h5");
+    depname.textContent=this.Department;
+    cardSection1.appendChild(depname);
+    depname.style.textAlign= "center";
+
+    let levname = document.createElement("h5");
+    levname.textContent=this.Level;
+    cardSection1.appendChild(levname);
+    levname.style.textAlign= "center";
+
+    let emid = document.createElement("h5");
+    emid.textContent=this.EmployeeID;
+    cardSection1.appendChild(emid);
+    emid.style.textAlign= "center";
+
+    let imglink = document.createElement("img");
+    imglink.src=this.image_URL;
+    imglink.style.width= "100px";     
+    cardSection1.appendChild(imglink);
+
+
+    //document.write(`${this.FullName} Salary is  ${this.findSalary()}JD <br>`);
+    
 }
 
-let GhaziSamer = new Person(1000, "Ghazi Samer", "Administration", "Senior","IMG");
-let LanaAli = new Person(1001, "Lana Ali", "Finance", "Senior","IMG");
-let TamaraAyoub = new Person(1002, "Tamara Ayoub", "Marketing", "Senior","IMG");
-let SafiWalid = new Person(1003, "Safi Walid", "Administration", "Mid-Senior","IMG");
-let OmarZaid = new Person(1004, "Omar Zaid", "Development", "Senior","IMG");
-let RanaSaleh = new Person(1005, "Rana Saleh", "Development", "Junior","IMG");
-let HadiAhmad = new Person(1005, "Hadi Ahmad", "Finance", "Mid-Senior","IMG");
+
+
+cardSection1.addEventListener("submit", clicko)
+
+function clicko (event) {
+    event.preventDefault();
+   
+    alert(`Hello User`);
+    let fname= event.target.name.value;
+    let imglink= event.target.imgurl.value;
+    let depname= event.target.Department.value;
+    let levname= event.target.Level.value;
+    let emid1 = event.target.emids.value;
+    console.log("User Data Is", fname,imglink,depname,levname);
+
+    let newUser = new Person (emid1,fname,depname, levname,"./assets/Ghazi.jpg");
+
+    
+    newUser.render();
+
+}
+
+
+
+
+let GhaziSamer = new Person(1000, "Ghazi Samer", "Administration", "Senior","./assets/Ghazi.jpg");
+let LanaAli = new Person(1001, "Lana Ali", "Finance", "Senior","./assets/Lana.jpg");
+let TamaraAyoub = new Person(1002, "Tamara Ayoub", "Marketing", "Senior","./assets/Tamara.jpg");
+let SafiWalid = new Person(1003, "Safi Walid", "Administration", "Mid-Senior","./assets/Safi.jpg");
+let OmarZaid = new Person(1004, "Omar Zaid", "Development", "Senior","./assets/Omar.jpg");
+let RanaSaleh = new Person(1005, "Rana Saleh", "Development", "Junior","./assets/Rana.jpg");
+let HadiAhmad = new Person(1006, "Hadi Ahmad", "Finance", "Mid-Senior","./assets/Hadi.jpg");
 
 GhaziSamer.render();
 LanaAli.render();
@@ -46,3 +116,42 @@ OmarZaid.render();
 RanaSaleh.render();
 HadiAhmad.render();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//let butel1 = document.getElementById("but1");
+
+
+
+
+/*Person.prototype.render = function(){
+    document.write(`${this.FullName} Salary is  ${this.findSalary()}JD <br>`);*/
+
+
+
+    //var val = Math.floor(1000 + Math.random() * 9000);
+    //console.log(val);
