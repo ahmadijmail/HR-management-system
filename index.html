@@ -7,21 +7,71 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <header>
-        <nav>
+<body id="maino">
+    <header id="headerEl"> 
+        <nav class="nav">
             <ul>
-               <li><a href="./index.html">Main</a></li>
-              <li><a href="./accounting.html">Accounting </a></li>
+               <li class="nav-link" ><a href="./index.html">Main</a></li>
+              <li class="nav-link" ><a href="./accounting.html">Accounting </a></li>
             </ul>
           </nav>
-
     </header>
-     <script src="./app.js"></script>
-<footer></footer>
-     <p id="rights">Copyright © 2022</p>
-     <li id="rights2"><a href="https://twitter.com/ahmadijmail1">Twitter </a></li>
-     <li id="rights2"><a href="https://www.facebook.com/ahmadijmail">FaceBook </a></li>
+
+    <form  id="Cards">
+
+
+        
+
+        <button id="but1">submit</button> 
+        
+        
+        <label for="full name">Enter Your name:</label> 
+        <input id="name" name = "full name" type="text"> <br>
+
+        <label for="emplye id">Enter Your ID:</label>
+        <input id="emids" name = "emplye id" type="text"> <br>
+
+        <label for="image url">Enter IMG url:</label> 
+        <input  id="imgurl" name = "image url" type="text"> <br>
+
+
+        <label  for="Department">Choose a Department:</label>
+        <select  name="Department" id="Department">
+            <option value="Administration">Administration</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Development">Development</option>
+            <option value="Finance">Finance</option>
+            <br>
+          </select> 
+
+          <label  for="Level ">Choose a Level :</label> 
+          <select name="Level " id="Level">
+              <option value="Junior">Junior</option>
+              <option value="Mid-Senior">Mid-Senior</option>
+              <option value="Senior">Senior</option>
+           </select>
+
+    </form>
+  
+   
+    
+
+
+
+     
+
+
+
+    <script src="./app.js"></script>
+   
+<footer>
+
+    <div class="footer-content">
+        <p>Copyright © 2022</p>
+     <li ><a href="https://twitter.com/ahmadijmail1">Twitter </a></li>
+     <li ><a href="https://www.facebook.com/ahmadijmail">FaceBook </a></li>
+    </div>
+        
     </footer>
 </body>
 </html>
