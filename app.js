@@ -35,12 +35,17 @@ Person.prototype.findSalary = function(){
  
     }  
 
+    Person.prototype.id = function () {
+        return Math.floor(1000 + Math.random() * 9000);
+      
+      };
 
-Person.prototype.render = function() { 
+
+
 
 
     
-    
+    Person.prototype.render = function() { 
     
     let fname = document.createElement("h5");
     fname.textContent=this.FullName;
@@ -48,7 +53,7 @@ Person.prototype.render = function() {
     fname.style.textAlign= "center";
 
     
-       
+    
 
     let depname = document.createElement("h5");
     depname.textContent=this.Department;
@@ -60,11 +65,7 @@ Person.prototype.render = function() {
     cardSection1.appendChild(levname);
     levname.style.textAlign= "center";
 
-    let emid = document.createElement("h5");
-    emid.textContent=this.EmployeeID;
-    cardSection1.appendChild(emid);
-    emid.style.textAlign= "center";
-
+   
     let imglink = document.createElement("img");
     imglink.src=this.image_URL;
     imglink.style.width= "100px";     
@@ -83,14 +84,15 @@ function clicko (event) {
     event.preventDefault();
    
     alert(`Hello User`);
+    let id = Person.prototype.id();
     let fname= event.target.name.value;
-    let imglink= event.target.imgurl.value;
+    let imgurl= event.target.imgurl.value;
     let depname= event.target.Department.value;
     let levname= event.target.Level.value;
-    let emid1 = event.target.emids.value;
-    console.log("User Data Is", fname,imglink,depname,levname);
+    
+    //console.log(event);
 
-    let newUser = new Person (emid1,fname,depname, levname,"./assets/Ghazi.jpg");
+    let newUser = new Person (id,fname,depname, levname,imgurl);
 
     
     newUser.render();
