@@ -71,3 +71,17 @@ body{
 
 
 
+table{
+  width: 500px;
+  height: 300px;
+  border-collapse: collapse;
+  margin-left: 40%;    
+  margin-top: 10%;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid rgb(7, 4, 4);
+  color: rgb(218, 28, 28);
+  
+}
